@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ bgImage }) => {
                             Desbloquea el potencial de tus proyectos <span className="underline decoration-anthropic-black/20 underline-offset-[12px] decoration-2">inmobiliarios.</span>
                         </h1>
                         <p className="text-xl md:text-2xl font-body text-anthropic-black/70 leading-relaxed mb-10 max-w-xl">
-                            Gestionamos tus permisos y asesorías con un enfoque estratégico y técnico, asegurando la viabilidad de cada etapa.
+                            Gestionamos tus permisos y te asesoramos con un enfoque estratégico y técnico.
                         </p>
                     </motion.div>
 
