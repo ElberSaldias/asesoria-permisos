@@ -15,7 +15,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-cream-dark/95 border-anthropic-black/5 py-3' : 'bg-transparent py-5'}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled || isOpen ? 'bg-cream-dark/95 border-anthropic-black/5 py-3' : 'bg-transparent py-5'}`}>
             <div className="max-w-[1400px] mx-auto px-6 md:px-12">
                 <div className="flex justify-between items-center gap-8">
                     {/* Logo */}

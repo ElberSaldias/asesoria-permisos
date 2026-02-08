@@ -37,7 +37,7 @@ const Services = () => {
                         <h2 className="text-4xl md:text-5xl font-headings font-bold text-anthropic-black mb-6 tracking-tight">
                             Servicios de Asesoría Técnica
                         </h2>
-                        <p className="text-xl font-body text-anthropic-black/60 leading-relaxed">
+                        <p className="text-xl font-body text-anthropic-black/80 leading-relaxed">
                             Brindamos asesoría técnica y legal de alto nivel para asegurar el éxito y cumplimiento normativo de sus desarrollos inmobiliarios.
                         </p>
                     </div>

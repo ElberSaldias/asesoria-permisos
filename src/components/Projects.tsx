@@ -29,7 +29,7 @@ const Projects = () => {
                     <h2 className="text-4xl md:text-5xl font-headings font-bold text-anthropic-black mb-6 tracking-tight">
                         Casos de Éxito
                     </h2>
-                    <p className="text-xl font-body text-anthropic-black/60 leading-relaxed max-w-2xl">
+                    <p className="text-xl font-body text-anthropic-black/80 leading-relaxed max-w-2xl">
                         Una selección de proyectos donde nuestra gestión normativa ha sido clave para la viabilidad técnica y financiera.
                     </p>
                 </div>
@@ -54,7 +54,7 @@ const Projects = () => {
                             <h3 className="text-2xl font-headings font-bold text-anthropic-black mb-3 group-hover:text-primary transition-colors">
                                 {project.title}
                             </h3>
-                            <p className="font-body text-anthropic-black/60 text-lg leading-relaxed">
+                            <p className="font-body text-anthropic-black/80 text-lg leading-relaxed">
                                 {project.description}
                             </p>
                         </motion.div>
