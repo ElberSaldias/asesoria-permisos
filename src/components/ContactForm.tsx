@@ -15,12 +15,37 @@ const ContactForm = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         setError(null);
 
         try {
+            // First send to n8n webhook via our own API route
+            const webhookResponse = await fetch('/api/form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nombre: formState.name,
+                    email: formState.email,
+                    mensaje: formState.message,
+                    telefono: formState.phone, // Adding phone and projectType just in case, though user only listed 3
+                    tipo_proyecto: formState.projectType
+                })
+            });
+
+            if (!webhookResponse.ok) {
+                console.error('API error:', await webhookResponse.text());
+                // We continue even if webhook fails to ensure data is saved in Supabase
+            } else {
+                console.log('Form data sent to API successfully');
+            }
+
+            // Then save to Supabase
             const { error: supabaseError } = await supabase
                 .from('contact_submissions')
                 .insert([
@@ -166,7 +191,7 @@ const ContactForm = () => {
                                                 <option value="habitacional">Habitacional / Inmobiliario</option>
                                                 <option value="comercial">Comercial / Oficinas</option>
                                                 <option value="industrial">Industrial</option>
-                                                <option value="loteria">Loteo / Subdivisión</option>
+                                                <option value="loteo">Loteo / Subdivisión</option>
                                                 <option value="otro">Otro</option>
                                             </select>
                                         </div>
